@@ -1,0 +1,16 @@
+name: AdaTime
+channels:
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  - python=3
+  - pytorch=1.7
+  - numpy=1.20.1
+  - scikit-learn=0.24.1
+  - pandas=1.2.4
+  - openpyxl=3.0.7
+  - wandb=0.12.7
+  - pip:
+    - pip
+    - skorch==0.10.0
