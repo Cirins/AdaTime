@@ -16,15 +16,15 @@ if __name__ == "__main__":
     parser.add_argument('--da_method',              default='MCD',               type=str, help='NO_ADAPT, Deep_Coral, MMDA, DANN, CDAN, DIRT, DSAN, HoMM, CoDATS, AdvSKM, SASA, CoTMix, TARGET_ONLY')
 
     # ========= Select the DATASET ==============
-    parser.add_argument('--data_path',              default='ADATIME_data',                  type=str, help='Path containing datase2t')
+    parser.add_argument('--data_path',              default='ADATIME_data\CWRU',                  type=str, help='Path containing datase2t')
     parser.add_argument('--dataset',                default='HAR',                      type=str, help='Dataset of choice: (WISDM - EEG - HAR - HHAR_SA)')
 
     # ========= Select the BACKBONE ==============
     parser.add_argument('--backbone',               default='CNN',                      type=str, help='Backbone of choice: (CNN - RESNET18 - TCN)')
 
     # ========= Experiment settings ===============
-    parser.add_argument('--num_runs',               default=1,                          type=int, help='Number of consecutive run with different seeds')
-    parser.add_argument('--device',                 default= "cuda",                   type=str, help='cpu or cuda')
+    parser.add_argument('--num_runs',               default=5,                          type=int, help='Number of consecutive run with different seeds')
+    parser.add_argument('--device',                 default= "cpu",                   type=str, help='cpu or cuda')
 
     # arguments
     args = parser.parse_args()
