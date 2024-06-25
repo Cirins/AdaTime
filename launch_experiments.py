@@ -2,7 +2,7 @@ import subprocess
 
 # Define lists of parameters
 datasets = ["CWRU_IR", "CWRU_Ball", "CWRU_OR_centred", "CWRU_OR_orthogonal", "CWRU_OR_opposite"]
-da_methods = ["NO_ADAPT", "Deep_Coral", "DSAN", "DIRT", "CoDATS", "TARGET_ONLY"]
+da_methods = ["NO_ADAPT", "Deep_Coral", "TARGET_ONLY"]
 
 # Base command to run the script, adjust the python filename as needed
 base_command = "python main.py"
