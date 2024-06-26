@@ -7,7 +7,8 @@ def get_dataset_class(dataset_name):
 class CWRU_IR():
     def __init__(self):
         super(CWRU_IR, self)
-        self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        # self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        self.scenarios = [("14", "4"), ("15", "5"), ("16", "6"), ("17", "7")]
         self.class_names = ['Ball', 'OR_centred', 'OR_orthogonal', 'OR_opposite']
         self.sequence_len = 256
         self.shuffle = True
@@ -45,7 +46,8 @@ class CWRU_IR():
 class CWRU_Ball():
     def __init__(self):
         super(CWRU_Ball, self)
-        self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        # # self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        self.scenarios = [("14", "4"), ("15", "5"), ("16", "6"), ("17", "7")]
         self.class_names = ['IR', 'OR_centred', 'OR_orthogonal', 'OR_opposite']
         self.sequence_len = 256
         self.shuffle = True
@@ -83,7 +85,8 @@ class CWRU_Ball():
 class CWRU_OR_centred():
     def __init__(self):
         super(CWRU_OR_centred, self)
-        self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        # # self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        self.scenarios = [("14", "4"), ("15", "5"), ("16", "6"), ("17", "7")]
         self.class_names = ['IR', 'Ball', 'OR_orthogonal', 'OR_opposite']
         self.sequence_len = 256
         self.shuffle = True
@@ -121,7 +124,8 @@ class CWRU_OR_centred():
 class CWRU_OR_orthogonal():
     def __init__(self):
         super(CWRU_OR_orthogonal, self)
-        self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        # # self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        self.scenarios = [("14", "4"), ("15", "5"), ("16", "6"), ("17", "7")]
         self.class_names = ['IR', 'Ball', 'OR_centred', 'OR_opposite']
         self.sequence_len = 256
         self.shuffle = True
@@ -159,7 +163,8 @@ class CWRU_OR_orthogonal():
 class CWRU_OR_opposite():
     def __init__(self):
         super(CWRU_OR_opposite, self)
-        self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        # # self.scenarios = [("0", "4"), ("0", "5"), ("0", "6"), ("0", "7")]
+        self.scenarios = [("14", "4"), ("15", "5"), ("16", "6"), ("17", "7")]
         self.class_names = ['IR', 'Ball', 'OR_centred', 'OR_orthogonal']
         self.sequence_len = 256
         self.shuffle = True
