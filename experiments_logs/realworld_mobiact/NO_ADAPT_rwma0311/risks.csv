@@ -1,0 +1,4 @@
+,scenario,run,src_risk,few_shot_risk,trg_risk
+0,src_to_trg,0,0.1419,5.3992,8.2593
+1,mean,-,0.1419,5.3992,8.2593
+2,std,-,nan,nan,nan

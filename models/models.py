@@ -97,8 +97,14 @@ class classifier(nn.Module):
         self.logits = nn.Linear(1024, configs.num_classes)
         self.configs = configs
 
+        self.fc_shared = nn.Linear(1024, 100)
+        self.fc_class = nn.Linear(100, configs.num_classes)
+        self.relu = nn.ReLU()
+
     def forward(self, x):
-        predictions = self.logits(x)
+        # predictions = self.logits(x)
+        x = self.relu(self.fc_shared(x))
+        predictions = self.fc_class(x)
         return predictions
 
 

@@ -10,11 +10,11 @@ class realworld_mobiact():
     def __init__(self):
         super(realworld_mobiact, self).__init__()
         self.train_params = {
-            'num_epochs': 100,
-            'batch_size': 64,
-            # 'weight_decay': 1e-4,
-            # 'step_size': 50,
-            # 'lr_decay': 0.5
+            'num_epochs': 1000,
+            'batch_size': 32,
+            'weight_decay': 1e-4,
+            'step_size': 50,
+            'lr_decay': 0.5
 
         }
         self.alg_hparams = {

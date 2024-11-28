@@ -62,7 +62,7 @@ class Trainer(AbstractTrainer):
                 self.initialize_algorithm()
 
                 # Train the domain adaptation algorithm
-                self.last_model, self.best_model = self.algorithm.update(self.src_train_dl, self.trg_train_dl, self.loss_avg_meters, self.logger)
+                self.last_model, self.best_model = self.algorithm.update(self.src_train_dl, self.trg_train_dl, self.loss_avg_meters, self.logger, self.evaluate_src_test)
 
                 # Save checkpoint
                 self.save_checkpoint(self.home_path, self.scenario_log_dir, self.last_model, self.best_model)

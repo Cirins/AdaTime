@@ -35,28 +35,45 @@ class Algorithm(torch.nn.Module):
 
 
     # update function is common to all algorithms
-    def update(self, src_loader, trg_loader, avg_meter, logger):
+    def update(self, src_loader, trg_loader, avg_meter, logger, evaluate_src_test):
         # defining best and last model
-        best_src_risk = float('inf')
+        best_test_loss = float('inf')
         best_model = None
+        best_epoch = 0
+        patience = self.hparams.get("patience", 20)
+        patience_counter = 0
 
         for epoch in range(1, self.hparams["num_epochs"] + 1):
-            
+            self.network.train()
             # training loop 
             self.training_epoch(src_loader, trg_loader, avg_meter, epoch)
 
-            # saving the best model based on src risk
-            if (epoch + 1) % 10 == 0 and avg_meter['Src_cls_loss'].avg < best_src_risk:
-                best_src_risk = avg_meter['Src_cls_loss'].avg
-                best_model = deepcopy(self.network.state_dict())
+            # Evaluate on source test data
+            self.network.eval()
+            test_loss = evaluate_src_test()
 
+            # saving the best model based on src test risk
+            if test_loss < best_test_loss:
+                best_test_loss = test_loss
+                best_model = deepcopy(self.network.state_dict())
+                best_epoch = epoch
+                patience_counter = 0
+            else:
+                patience_counter += 1
 
             logger.debug(f'[Epoch : {epoch}/{self.hparams["num_epochs"]}]')
             for key, val in avg_meter.items():
                 logger.debug(f'{key}\t: {val.avg:2.4f}')
+            logger.debug(f'Test_loss\t: {test_loss:2.4f}')
             logger.debug(f'-------------------------------------')
-        
+
+            if patience_counter >= patience:
+                logger.debug(f'Early stopping at epoch {epoch}')
+                break
+
         last_model = self.network.state_dict()
+
+        logger.debug(f'Best epoch: {best_epoch}, best test loss: {best_test_loss:.4f}')
 
         return last_model, best_model
     
@@ -76,11 +93,9 @@ class NO_ADAPT(Algorithm):
         self.optimizer = torch.optim.Adam(
             self.network.parameters(),
             lr=hparams["learning_rate"],
-            # weight_decay=hparams["weight_decay"]
+            weight_decay=hparams["weight_decay"]
         )
-        # self.lr_scheduler = StepLR(self.optimizer, step_size=hparams['step_size'], gamma=hparams['lr_decay'])
-        # lambda_lr = lambda epoch: 1 - epoch / 100
-        # self.lr_scheduler = LambdaLR(self.optimizer, lr_lambda=lambda_lr)
+        self.lr_scheduler = StepLR(self.optimizer, step_size=hparams['step_size'], gamma=hparams['lr_decay'])
         # hparams
         self.hparams = hparams
         # device
@@ -104,9 +119,9 @@ class NO_ADAPT(Algorithm):
             losses = {'Src_cls_loss': src_cls_loss.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
-        # self.lr_scheduler.step()
+        self.lr_scheduler.step()
        
 
 class ROT(Algorithm):
@@ -120,11 +135,9 @@ class ROT(Algorithm):
         self.optimizer = torch.optim.Adam(
             self.network.parameters(),
             lr=hparams["learning_rate"],
-            # weight_decay=hparams["weight_decay"]
+            weight_decay=hparams["weight_decay"]
         )
-        # self.lr_scheduler = StepLR(self.optimizer, step_size=hparams['step_size'], gamma=hparams['lr_decay'])
-        # lambda_lr = lambda epoch: 1 - epoch / 100
-        # self.lr_scheduler = LambdaLR(self.optimizer, lr_lambda=lambda_lr)
+        self.lr_scheduler = StepLR(self.optimizer, step_size=hparams['step_size'], gamma=hparams['lr_decay'])
         # hparams
         self.hparams = hparams
         # device
@@ -149,9 +162,9 @@ class ROT(Algorithm):
             losses = {'Src_cls_loss': src_cls_loss.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
-        # self.lr_scheduler.step()
+        self.lr_scheduler.step()
 
     def random_rotation_matrix(self):
         """Generate a random rotation matrix from a predefined set of quaternions."""
@@ -194,9 +207,9 @@ class TARGET_ONLY(Algorithm):
         self.optimizer = torch.optim.Adam(
             self.network.parameters(),
             lr=hparams["learning_rate"],
-            # weight_decay=hparams["weight_decay"]
+            weight_decay=hparams["weight_decay"]
         )
-        # self.lr_scheduler = StepLR(self.optimizer, step_size=hparams['step_size'], gamma=hparams['lr_decay'])
+        self.lr_scheduler = StepLR(self.optimizer, step_size=hparams['step_size'], gamma=hparams['lr_decay'])
         # hparams
         self.hparams = hparams
         # device
@@ -222,9 +235,9 @@ class TARGET_ONLY(Algorithm):
             losses = {'Trg_cls_loss': trg_cls_loss.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
-        # self.lr_scheduler.step()
+        self.lr_scheduler.step()
 
 
 class Deep_Coral(Algorithm):
@@ -283,7 +296,7 @@ class Deep_Coral(Algorithm):
                     'coral_loss': coral_loss.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
 
@@ -351,7 +364,7 @@ class MMDA(Algorithm):
                     'cond_ent_wt': cond_ent_loss.item(), 'Src_cls_loss': src_cls_loss.item()}
             
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
 
@@ -441,7 +454,7 @@ class DANN(Algorithm):
             losses =  {'Total_loss': loss.item(), 'Domain_loss': domain_loss.item(), 'Src_cls_loss': src_cls_loss.item()}
            
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
 
@@ -542,7 +555,7 @@ class CDAN(Algorithm):
                     'cond_ent_loss': loss_trg_cent.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
         self.lr_scheduler.step()
 
 class DIRT(Algorithm):
@@ -648,7 +661,7 @@ class DIRT(Algorithm):
                     'cond_ent_loss': loss_trg_cent.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
 
@@ -706,7 +719,7 @@ class DSAN(Algorithm):
             losses =  {'Total_loss': loss.item(), 'LMMD_loss': domain_loss.item(), 'Src_cls_loss': src_cls_loss.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
 
@@ -766,7 +779,7 @@ class HoMM(Algorithm):
             losses =  {'Total_loss': loss.item(), 'HoMM_loss': domain_loss.item(), 'Src_cls_loss': src_cls_loss.item()}
             
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
 
@@ -825,7 +838,7 @@ class DDC(Algorithm):
             losses =  {'Total_loss': loss.item(), 'MMD_loss': domain_loss.item(), 'Src_cls_loss': src_cls_loss.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
 
@@ -913,7 +926,7 @@ class CoDATS(Algorithm):
 
             losses =  {'Total_loss': loss.item(), 'Domain_loss': domain_loss.item(), 'Src_cls_loss': src_cls_loss.item()}
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
 
@@ -990,7 +1003,7 @@ class AdvSKM(Algorithm):
 
             losses =  {'Total_loss': loss.item(), 'MMD_loss': mmd_loss_adv.item(), 'Src_cls_loss': src_cls_loss.item()}
             for key, val in losses.items():
-                    avg_meter[key].update(val, 32)
+                    avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
 
@@ -1052,7 +1065,7 @@ class SASA(Algorithm):
             losses =  {'Total_loss': total_loss.item(), 'MMD_loss': domain_loss_intra.item(),
                     'Src_cls_loss': src_cls_loss.item()}
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()
     def mmd_loss(self, src_struct, tgt_struct, weight):
@@ -1140,7 +1153,7 @@ class CoTMix(Algorithm):
                     'trg_con_loss': trg_con_loss.item()
                     }
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler.step()           
 
@@ -1263,7 +1276,7 @@ class MCD(Algorithm):
             losses = {'Src_cls_loss': loss.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
     def training_epoch(self, src_loader, trg_loader, avg_meter, epoch):
 
@@ -1334,7 +1347,7 @@ class MCD(Algorithm):
             losses =  {'Total_loss': loss.item(), 'MMD_loss': domain_loss.item()}
 
             for key, val in losses.items():
-                avg_meter[key].update(val, 32)
+                avg_meter[key].update(val, self.hparams["batch_size"])
 
         self.lr_scheduler_fe.step()
         self.lr_scheduler_c1.step()

@@ -1,0 +1,8 @@
+,scenario,run,acc,f1_score,auroc
+0,src_nowal_to_trg_nowal,0,0.2988,0.2271,0.6013
+1,src_nowal_to_trg_nowal,1,0.6194,0.5485,0.7482
+2,src_nowal_to_trg_nowal,2,0.6207,0.5025,0.7099
+3,src_nowal_to_trg_nowal,3,0.2974,0.2330,0.6091
+4,src_nowal_to_trg_nowal,4,0.6262,0.5050,0.7148
+5,mean,-,0.4925,0.4032,0.6767
+6,std,-,0.1775,0.1591,0.0669
