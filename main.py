@@ -29,6 +29,9 @@ if __name__ == "__main__":
     # arguments
     args = parser.parse_args()
 
+    # print the arguments
+    print(args)
+
     # create trainier object
     trainer = Trainer(args)
 

@@ -7,7 +7,7 @@ da_method = 'ROT'
 data_path = 'data'
 dataset = 'realworld_mobiact'
 backbone = 'TSTR'
-num_runs = 100
+num_runs = 10
 device = 'cuda'
 
 
