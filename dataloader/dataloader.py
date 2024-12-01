@@ -39,7 +39,6 @@ class Load_Dataset(Dataset):
         if dataset_configs.normalize:
             data_mean = torch.mean(x_data, dim=(0, 2))
             data_std = torch.std(x_data, dim=(0, 2))
-            print("Warning: Normalizing data")
             # self.transform = transforms.Normalize(mean=data_mean, std=data_std)
         else:
             self.transform = None

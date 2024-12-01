@@ -62,7 +62,7 @@ class Trainer(AbstractTrainer):
                 self.initialize_algorithm()
 
                 # Train the domain adaptation algorithm
-                self.last_model, self.best_model = self.algorithm.update(self.src_train_dl, self.trg_train_dl, self.loss_avg_meters, self.logger, self.evaluate_src_test)
+                self.last_model, self.best_model = self.algorithm.update(self.src_train_dl, self.trg_train_dl, self.loss_avg_meters, self.logger)
 
                 # Save checkpoint
                 self.save_checkpoint(self.home_path, self.scenario_log_dir, self.last_model, self.best_model)
@@ -70,6 +70,9 @@ class Trainer(AbstractTrainer):
                 # Calculate risks and metrics
                 metrics = self.calculate_metrics()
                 risks = self.calculate_risks()
+
+                # Print results
+                print(f"Run {run_id} - {src_id} to {trg_id} - Acc: {metrics[0]:.4f} - F1: {metrics[1]:.4f} - AUROC: {metrics[2]:.4f}")
 
                 # Append results to tables
                 scenario = f"{src_id}_to_{trg_id}"
@@ -93,7 +96,6 @@ class Trainer(AbstractTrainer):
         # Cross-domain scenarios
         for src_id, trg_id in self.dataset_configs.scenarios:
             for run_id in range(self.num_runs):
-                print(f"Testing {src_id} to {trg_id} run {run_id}")
                 # fixing random seed
                 fix_randomness(run_id)
 

@@ -10,7 +10,7 @@ class realworld_mobiact():
     def __init__(self):
         super(realworld_mobiact, self).__init__()
         self.train_params = {
-            'num_epochs': 1000,
+            'num_epochs': 40,
             'batch_size': 32,
             'weight_decay': 1e-4,
             'step_size': 50,
@@ -18,9 +18,8 @@ class realworld_mobiact():
 
         }
         self.alg_hparams = {
-            'NO_ADAPT': {'learning_rate': 1e-4, 'src_cls_loss_wt': 1},
-            'ROT': {'learning_rate': 1e-4, 'src_cls_loss_wt': 1},
-            'TARGET_ONLY': {'learning_rate': 1e-4, 'trg_cls_loss_wt': 1},
+            'NO_ADAPT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'TARGET_ONLY': {'learning_rate': 1e-3, 'trg_cls_loss_wt': 1},
             "SASA": {
                 "domain_loss_wt": 7.3937939938562,
                 "learning_rate": 0.005,

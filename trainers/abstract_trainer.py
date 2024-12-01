@@ -55,7 +55,7 @@ class AbstractTrainer(object):
         self.dataset_configs, self.hparams_class = self.get_configs()
 
         # to fix dimension of features in classifier and discriminator networks.
-        # self.dataset_configs.final_out_channels = self.dataset_configs.tcn_final_out_channles if args.backbone == "TCN" else self.dataset_configs.final_out_channels
+        self.dataset_configs.final_out_channels = self.dataset_configs.tcn_final_out_channles if args.backbone == "TCN" else self.dataset_configs.final_out_channels
 
         # Specify number of hparams
         self.hparams = {**self.hparams_class.alg_hparams[self.da_method],
@@ -87,10 +87,6 @@ class AbstractTrainer(object):
         last_model = checkpoint['last']
         best_model = checkpoint['best']
         return last_model, best_model
-
-    def evaluate_src_test(self):
-        self.evaluate(self.src_test_dl)
-        return self.loss.item()
 
     def train_model(self):
         # Get the algorithm and the backbone network
@@ -238,7 +234,6 @@ class AbstractTrainer(object):
         self.evaluate(self.trg_test_dl)
         # accuracy  
         acc = self.ACC(self.full_preds.argmax(dim=1).cpu(), self.full_labels.cpu()).item()
-        print(acc)
         # f1
         f1 = self.F1(self.full_preds.argmax(dim=1).cpu(), self.full_labels.cpu()).item()
         # auroc 
@@ -290,4 +285,4 @@ class AbstractTrainer(object):
         # Apply the formatting function to each element in the tables
         table = table.applymap(format_func)
 
-        return table
+        return table 

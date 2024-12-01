@@ -1,8 +1,0 @@
-,scenario,run,src_risk,few_shot_risk,trg_risk
-0,src_nowal_to_trg_nowal,0,0.0158,13.2939,10.4008
-1,src_nowal_to_trg_nowal,1,0.0276,3.0419,2.0869
-2,src_nowal_to_trg_nowal,2,0.0294,8.4705,4.3009
-3,src_nowal_to_trg_nowal,3,0.0313,9.1989,9.2315
-4,src_nowal_to_trg_nowal,4,0.0367,7.4989,6.0883
-5,mean,-,0.0282,8.3008,6.4217
-6,std,-,0.0077,3.6765,3.4324

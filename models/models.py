@@ -60,6 +60,8 @@ class CNN(nn.Module):
         x_flat = x.reshape(x.shape[0], -1)
         return x_flat
 
+
+
 ########## TSTR #############################
 class TSTR(nn.Module):
     def __init__(self, configs):

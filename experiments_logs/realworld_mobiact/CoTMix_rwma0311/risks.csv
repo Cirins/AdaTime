@@ -1,0 +1,8 @@
+,scenario,run,src_risk,few_shot_risk,trg_risk
+0,df_to_dp_15,0,nan,nan,nan
+1,df_to_dp_15,1,1.6545,2.2988,2.4042
+2,df_to_dp_15,2,nan,nan,nan
+3,df_to_dp_15,3,1.4743,2.8232,3.1080
+4,df_to_dp_15,4,1.3250,2.4430,2.5192
+5,mean,-,1.4846,2.5216,2.6771
+6,std,-,0.1650,0.2709,0.3775
