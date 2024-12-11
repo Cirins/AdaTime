@@ -1,0 +1,207 @@
+=============================================
+Dataset: realworld_pamap
+Method:  DANN
+=============================================
+Source: df ---> Target: dp_15
+Run ID: 0
+=============================================
+[Epoch : 1/40]
+Total_loss	: 5.5480
+Domain_loss	: 1.3679
+Src_cls_loss	: 0.3764
+-------------------------------------
+[Epoch : 2/40]
+Total_loss	: 5.2151
+Domain_loss	: 1.3693
+Src_cls_loss	: 0.3125
+-------------------------------------
+[Epoch : 3/40]
+Total_loss	: 5.0239
+Domain_loss	: 1.3626
+Src_cls_loss	: 0.2796
+-------------------------------------
+[Epoch : 4/40]
+Total_loss	: 4.9163
+Domain_loss	: 1.3589
+Src_cls_loss	: 0.2610
+-------------------------------------
+[Epoch : 5/40]
+Total_loss	: 4.8364
+Domain_loss	: 1.3604
+Src_cls_loss	: 0.2451
+-------------------------------------
+[Epoch : 6/40]
+Total_loss	: 4.7640
+Domain_loss	: 1.3586
+Src_cls_loss	: 0.2323
+-------------------------------------
+[Epoch : 7/40]
+Total_loss	: 4.7162
+Domain_loss	: 1.3551
+Src_cls_loss	: 0.2250
+-------------------------------------
+[Epoch : 8/40]
+Total_loss	: 4.6649
+Domain_loss	: 1.3547
+Src_cls_loss	: 0.2154
+-------------------------------------
+[Epoch : 9/40]
+Total_loss	: 4.6305
+Domain_loss	: 1.3557
+Src_cls_loss	: 0.2084
+-------------------------------------
+[Epoch : 10/40]
+Total_loss	: 4.5989
+Domain_loss	: 1.3574
+Src_cls_loss	: 0.2016
+-------------------------------------
+[Epoch : 11/40]
+Total_loss	: 4.5722
+Domain_loss	: 1.3598
+Src_cls_loss	: 0.1953
+-------------------------------------
+[Epoch : 12/40]
+Total_loss	: 4.5480
+Domain_loss	: 1.3608
+Src_cls_loss	: 0.1902
+-------------------------------------
+[Epoch : 13/40]
+Total_loss	: 4.5148
+Domain_loss	: 1.3579
+Src_cls_loss	: 0.1854
+-------------------------------------
+[Epoch : 14/40]
+Total_loss	: 4.4905
+Domain_loss	: 1.3549
+Src_cls_loss	: 0.1822
+-------------------------------------
+[Epoch : 15/40]
+Total_loss	: 4.4718
+Domain_loss	: 1.3546
+Src_cls_loss	: 0.1788
+-------------------------------------
+[Epoch : 16/40]
+Total_loss	: 4.4555
+Domain_loss	: 1.3542
+Src_cls_loss	: 0.1759
+-------------------------------------
+[Epoch : 17/40]
+Total_loss	: 4.4402
+Domain_loss	: 1.3549
+Src_cls_loss	: 0.1727
+-------------------------------------
+[Epoch : 18/40]
+Total_loss	: 4.4222
+Domain_loss	: 1.3532
+Src_cls_loss	: 0.1701
+-------------------------------------
+[Epoch : 19/40]
+Total_loss	: 4.4074
+Domain_loss	: 1.3532
+Src_cls_loss	: 0.1673
+-------------------------------------
+[Epoch : 20/40]
+Total_loss	: 4.3944
+Domain_loss	: 1.3535
+Src_cls_loss	: 0.1647
+-------------------------------------
+[Epoch : 21/40]
+Total_loss	: 4.3810
+Domain_loss	: 1.3543
+Src_cls_loss	: 0.1618
+-------------------------------------
+[Epoch : 22/40]
+Total_loss	: 4.3693
+Domain_loss	: 1.3547
+Src_cls_loss	: 0.1593
+-------------------------------------
+[Epoch : 23/40]
+Total_loss	: 4.3545
+Domain_loss	: 1.3541
+Src_cls_loss	: 0.1568
+-------------------------------------
+[Epoch : 24/40]
+Total_loss	: 4.3437
+Domain_loss	: 1.3551
+Src_cls_loss	: 0.1543
+-------------------------------------
+[Epoch : 25/40]
+Total_loss	: 4.3341
+Domain_loss	: 1.3561
+Src_cls_loss	: 0.1520
+-------------------------------------
+[Epoch : 26/40]
+Total_loss	: 4.3250
+Domain_loss	: 1.3572
+Src_cls_loss	: 0.1497
+-------------------------------------
+[Epoch : 27/40]
+Total_loss	: 4.3130
+Domain_loss	: 1.3575
+Src_cls_loss	: 0.1473
+-------------------------------------
+[Epoch : 28/40]
+Total_loss	: 4.3025
+Domain_loss	: 1.3584
+Src_cls_loss	: 0.1448
+-------------------------------------
+[Epoch : 29/40]
+Total_loss	: 4.2937
+Domain_loss	: 1.3593
+Src_cls_loss	: 0.1427
+-------------------------------------
+[Epoch : 30/40]
+Total_loss	: 4.2850
+Domain_loss	: 1.3602
+Src_cls_loss	: 0.1406
+-------------------------------------
+[Epoch : 31/40]
+Total_loss	: 4.2752
+Domain_loss	: 1.3607
+Src_cls_loss	: 0.1386
+-------------------------------------
+[Epoch : 32/40]
+Total_loss	: 4.2658
+Domain_loss	: 1.3606
+Src_cls_loss	: 0.1368
+-------------------------------------
+[Epoch : 33/40]
+Total_loss	: 4.2572
+Domain_loss	: 1.3609
+Src_cls_loss	: 0.1350
+-------------------------------------
+[Epoch : 34/40]
+Total_loss	: 4.2484
+Domain_loss	: 1.3615
+Src_cls_loss	: 0.1331
+-------------------------------------
+[Epoch : 35/40]
+Total_loss	: 4.2389
+Domain_loss	: 1.3612
+Src_cls_loss	: 0.1314
+-------------------------------------
+[Epoch : 36/40]
+Total_loss	: 4.2317
+Domain_loss	: 1.3612
+Src_cls_loss	: 0.1300
+-------------------------------------
+[Epoch : 37/40]
+Total_loss	: 4.2235
+Domain_loss	: 1.3611
+Src_cls_loss	: 0.1285
+-------------------------------------
+[Epoch : 38/40]
+Total_loss	: 4.2155
+Domain_loss	: 1.3604
+Src_cls_loss	: 0.1274
+-------------------------------------
+[Epoch : 39/40]
+Total_loss	: 4.2086
+Domain_loss	: 1.3604
+Src_cls_loss	: 0.1261
+-------------------------------------
+[Epoch : 40/40]
+Total_loss	: 4.2013
+Domain_loss	: 1.3604
+Src_cls_loss	: 0.1247
+-------------------------------------
