@@ -418,6 +418,212 @@ class pamap_realworld():
 
 
 
+
+class mobiact_pamap():
+    def __init__(self):
+        super(mobiact_pamap, self).__init__()
+        self.train_params = {
+            'num_epochs': 40,
+            'batch_size': 32,
+            'weight_decay': 1e-4,
+            'step_size': 50,
+            'lr_decay': 0.5
+        }
+        self.alg_hparams = {
+            'NO_ADAPT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'ROT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'TARGET_ONLY': {'learning_rate': 1e-3, 'trg_cls_loss_wt': 1},
+            "SASA": {
+                "domain_loss_wt": 1.2632988839197083,
+                "learning_rate": 0.005,
+                "src_cls_loss_wt": 9.898676755625807,
+                "weight_decay": 0.0001
+            },
+            "CDAN": {
+                "cond_ent_wt": 0.837129024245748,
+                "domain_loss_wt": 5.9197207530729266,
+                "learning_rate": 0.001,
+                "src_cls_loss_wt": 6.983963629299826,
+                "weight_decay": 0.0001
+            },
+            "HoMM": {
+                "hommd_wt": 6.799448304230478,
+                "learning_rate": 0.005,
+                "src_cls_loss_wt": 0.2563533185103576,
+                "domain_loss_wt": 4.239,
+                "weight_decay": 0.0001
+            },
+            "DANN": {
+                "domain_loss_wt": 2.6051391453662873,
+                "learning_rate": 0.005,
+                "src_cls_loss_wt": 5.272383517138417,
+                "weight_decay": 0.0001
+            },
+            "DIRT": {
+                "cond_ent_wt": 1.6935884891647972,
+                "domain_loss_wt": 7.774841143071709,
+                "learning_rate": 0.005,
+                "src_cls_loss_wt": 9.62463958771893,
+                "vat_loss_wt": 4.644539486962429,
+                "weight_decay": 0.0001
+            },
+            "AdvSKM": {
+                "domain_loss_wt": 0.17573022784621156,
+                "learning_rate": 0.001,
+                "src_cls_loss_wt": 7.656694101023234,
+                "weight_decay": 0.0001
+            },
+            "MMDA": {
+                "cond_ent_wt": 7.555540424691775,
+                "coral_wt": 5.254400971297628,
+                "learning_rate": 0.005,
+                "mmd_wt": 2.295549751091742,
+                "src_cls_loss_wt": 6.653513071102565,
+                "weight_decay": 0.0001
+            },
+            "Deep_Coral": {
+                "coral_wt": 6.4881104202861755,
+                "learning_rate": 0.001,
+                "src_cls_loss_wt": 6.66305608395703,
+                "weight_decay": 0.0001
+            },
+            "CoDATS": {
+                "domain_loss_wt": 4.574872968982744,
+                "learning_rate": 0.001,
+                "src_cls_loss_wt": 5.860885469514424,
+                "weight_decay": 0.0001
+            },
+            "DSAN": {
+                "learning_rate": 0.005,
+                "mmd_wt": 1.5468030830413808,
+                "src_cls_loss_wt": 1.2981011362021273,
+                "domain_loss_wt": 0.1,
+                "weight_decay": 0.0001
+            },
+            "DDC": {
+                "learning_rate": 0.001,
+                "mmd_wt": 1.9901164953952095,
+                "src_cls_loss_wt": 4.881899626451807,
+                "domain_loss_wt": 7.595,
+                "weight_decay": 0.0001
+            },
+            "CoTMix": {
+                'learning_rate': 0.001, 
+                'mix_ratio': 0.72, 
+                'temporal_shift': 14,
+                'src_cls_weight': 0.98, 
+                'src_supCon_weight': 0.1, 
+                'trg_cont_weight': 0.1,
+                'trg_entropy_weight': 0.05
+            }
+        }
+
+
+
+
+
+class pamap_mobiact():
+    def __init__(self):
+        super(pamap_mobiact, self).__init__()
+        self.train_params = {
+            'num_epochs': 40,
+            'batch_size': 32,
+            'weight_decay': 1e-4,
+            'step_size': 50,
+            'lr_decay': 0.5
+        }
+        self.alg_hparams = {
+            'NO_ADAPT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'ROT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'TARGET_ONLY': {'learning_rate': 1e-3, 'trg_cls_loss_wt': 1},
+            "SASA": {
+                "domain_loss_wt": 1.2632988839197083,
+                "learning_rate": 0.005,
+                "src_cls_loss_wt": 9.898676755625807,
+                "weight_decay": 0.0001
+            },
+            "CDAN": {
+                "cond_ent_wt": 0.837129024245748,
+                "domain_loss_wt": 5.9197207530729266,
+                "learning_rate": 0.001,
+                "src_cls_loss_wt": 6.983963629299826,
+                "weight_decay": 0.0001
+            },
+            "HoMM": {
+                "hommd_wt": 6.799448304230478,
+                "learning_rate": 0.005,
+                "src_cls_loss_wt": 0.2563533185103576,
+                "domain_loss_wt": 4.239,
+                "weight_decay": 0.0001
+            },
+            "DANN": {
+                "domain_loss_wt": 2.6051391453662873,
+                "learning_rate": 0.005,
+                "src_cls_loss_wt": 5.272383517138417,
+                "weight_decay": 0.0001
+            },
+            "DIRT": {
+                "cond_ent_wt": 1.6935884891647972,
+                "domain_loss_wt": 7.774841143071709,
+                "learning_rate": 0.005,
+                "src_cls_loss_wt": 9.62463958771893,
+                "vat_loss_wt": 4.644539486962429,
+                "weight_decay": 0.0001
+            },
+            "AdvSKM": {
+                "domain_loss_wt": 0.17573022784621156,
+                "learning_rate": 0.001,
+                "src_cls_loss_wt": 7.656694101023234,
+                "weight_decay": 0.0001
+            },
+            "MMDA": {
+                "cond_ent_wt": 7.555540424691775,
+                "coral_wt": 5.254400971297628,
+                "learning_rate": 0.005,
+                "mmd_wt": 2.295549751091742,
+                "src_cls_loss_wt": 6.653513071102565,
+                "weight_decay": 0.0001
+            },
+            "Deep_Coral": {
+                "coral_wt": 6.4881104202861755,
+                "learning_rate": 0.001,
+                "src_cls_loss_wt": 6.66305608395703,
+                "weight_decay": 0.0001
+            },
+            "CoDATS": {
+                "domain_loss_wt": 4.574872968982744,
+                "learning_rate": 0.001,
+                "src_cls_loss_wt": 5.860885469514424,
+                "weight_decay": 0.0001
+            },
+            "DSAN": {
+                "learning_rate": 0.005,
+                "mmd_wt": 1.5468030830413808,
+                "src_cls_loss_wt": 1.2981011362021273,
+                "domain_loss_wt": 0.1,
+                "weight_decay": 0.0001
+            },
+            "DDC": {
+                "learning_rate": 0.001,
+                "mmd_wt": 1.9901164953952095,
+                "src_cls_loss_wt": 4.881899626451807,
+                "domain_loss_wt": 7.595,
+                "weight_decay": 0.0001
+            },
+            "CoTMix": {
+                'learning_rate': 0.001, 
+                'mix_ratio': 0.72, 
+                'temporal_shift': 14,
+                'src_cls_weight': 0.98, 
+                'src_supCon_weight': 0.1, 
+                'trg_cont_weight': 0.1,
+                'trg_entropy_weight': 0.05
+            }
+        }
+
+
+
+
 class HAR():
     def __init__(self):
         super(HAR, self).__init__()

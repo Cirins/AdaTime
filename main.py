@@ -13,7 +13,7 @@ if __name__ == "__main__":
     parser.add_argument('--exp_name',               default='EXP1',         type=str, help='experiment name')
 
     # ========= Select the DA methods ============
-    parser.add_argument('--da_method',              default='MCD',               type=str, help='NO_ADAPT, ROT, Deep_Coral, MMDA, DANN, CDAN, DIRT, DSAN, HoMM, CoDATS, AdvSKM, SASA, CoTMix, TARGET_ONLY')
+    parser.add_argument('--da_method',              default='MCD',               type=str, help='NO_ADAPT, SYN, Deep_Coral, MMDA, DANN, CDAN, DIRT, DSAN, HoMM, CoDATS, AdvSKM, SASA, CoTMix, TARGET_ONLY')
 
     # ========= Select the DATASET ==============
     parser.add_argument('--data_path',              default=r'../ADATIME_data',                  type=str, help='Path containing datase2t')
@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     # train and test
     if args.phase == 'train':
-        if args.da_method == 'NO_ADAPT' or args.da_method == 'ROT':
+        if args.da_method == 'NO_ADAPT':
             trainer.fit_noadapt()
         else:
             trainer.fit()

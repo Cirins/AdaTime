@@ -98,7 +98,7 @@ class Trainer(AbstractTrainer):
         table_risks = pd.DataFrame(columns=self.risks_columns)
 
         src_id = 'df'
-        trg_id = 'dp_20'
+        trg_id = 'dp_66'
 
         for run_id in range(self.num_runs):
             # fixing random seed
