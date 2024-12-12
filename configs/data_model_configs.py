@@ -10,7 +10,9 @@ class realworld_mobiact():
     def __init__(self):
         super(realworld_mobiact, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(15, 76)]
-        self.scenarios = [(f'df', f'dp_{dom}') for dom in range(15, 76)]
+        # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(15, 76)]
+        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(15, 76)]
+        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(15, 76)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -51,7 +53,9 @@ class mobiact_realworld():
     def __init__(self):
         super(mobiact_realworld, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(61, 76)]
-        self.scenarios = [(f'df', f'dp_{dom}') for dom in range(61, 76)]
+        # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(61, 76)]
+        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(61, 76)]
+        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(61, 76)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -92,7 +96,9 @@ class realworld_pamap():
     def __init__(self):
         super(realworld_pamap, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(15, 21)]
-        self.scenarios = [(f'df', f'dp_{dom}') for dom in range(15, 21)]
+        # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(15, 21)]
+        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(15, 21)]
+        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(15, 21)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -133,7 +139,9 @@ class pamap_realworld():
     def __init__(self):
         super(pamap_realworld, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(6, 21)]
-        self.scenarios = [(f'df', f'dp_{dom}') for dom in range(6, 21)]
+        # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(6, 21)]
+        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(6, 21)]
+        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(6, 21)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -174,7 +182,9 @@ class mobiact_pamap():
     def __init__(self):
         super(mobiact_pamap, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(61, 67)]
-        self.scenarios = [(f'df', f'dp_{dom}') for dom in range(61, 67)]
+        # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(61, 67)]
+        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(61, 67)]
+        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(61, 67)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -215,7 +225,9 @@ class pamap_mobiact():
     def __init__(self):
         super(pamap_mobiact, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(6, 67)]
-        self.scenarios = [(f'df', f'dp_{dom}') for dom in range(6, 67)]
+        # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(6, 67)]
+        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(6, 67)]
+        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(6, 67)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
