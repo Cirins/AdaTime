@@ -11,8 +11,8 @@ class realworld_mobiact():
         super(realworld_mobiact, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(15, 76)]
         # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(15, 76)]
-        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(15, 76)]
-        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(15, 76)]
+        self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(15, 76)]
+        # self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(15, 76)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -54,8 +54,8 @@ class mobiact_realworld():
         super(mobiact_realworld, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(61, 76)]
         # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(61, 76)]
-        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(61, 76)]
-        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(61, 76)]
+        self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(61, 76)]
+        # self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(61, 76)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -97,8 +97,8 @@ class realworld_pamap():
         super(realworld_pamap, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(15, 21)]
         # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(15, 21)]
-        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(15, 21)]
-        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(15, 21)]
+        self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(15, 21)]
+        # self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(15, 21)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -140,8 +140,8 @@ class pamap_realworld():
         super(pamap_realworld, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(6, 21)]
         # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(6, 21)]
-        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(6, 21)]
-        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(6, 21)]
+        self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(6, 21)]
+        # self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(6, 21)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -183,8 +183,8 @@ class mobiact_pamap():
         super(mobiact_pamap, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(61, 67)]
         # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(61, 67)]
-        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(61, 67)]
-        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(61, 67)]
+        self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(61, 67)]
+        # self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(61, 67)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True
@@ -226,8 +226,8 @@ class pamap_mobiact():
         super(pamap_mobiact, self).__init__()
         # self.scenarios = [(f'syn_{dom}', f'dp_{dom}') for dom in range(6, 67)]
         # self.scenarios = [(f'df', f'dp_{dom}') for dom in range(6, 67)]
-        # self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(6, 67)]
-        self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(6, 67)]
+        self.scenarios = [(f'syn_wal_{dom}', f'dp_wal_{dom}') for dom in range(6, 67)]
+        # self.scenarios = [(f'df', f'dp_wal_{dom}') for dom in range(6, 67)]
         self.class_names = ['WAL', 'RUN', 'CLD', 'CLU']
         self.sequence_len = 128
         self.shuffle = True

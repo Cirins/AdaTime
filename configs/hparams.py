@@ -21,6 +21,7 @@ class realworld_mobiact():
         }
         self.alg_hparams = {
             'NO_ADAPT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'SYN': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'ROT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'TARGET_ONLY': {'learning_rate': 1e-3, 'trg_cls_loss_wt': 1},
             "SASA": {
@@ -122,6 +123,7 @@ class mobiact_realworld():
         }
         self.alg_hparams = {
             'NO_ADAPT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'SYN': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'ROT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'TARGET_ONLY': {'learning_rate': 1e-3, 'trg_cls_loss_wt': 1},
             "SASA": {
@@ -225,6 +227,7 @@ class realworld_pamap():
         }
         self.alg_hparams = {
             'NO_ADAPT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'SYN': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'ROT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'TARGET_ONLY': {'learning_rate': 1e-3, 'trg_cls_loss_wt': 1},
             "SASA": {
@@ -328,6 +331,7 @@ class pamap_realworld():
         }
         self.alg_hparams = {
             'NO_ADAPT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'SYN': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'ROT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'TARGET_ONLY': {'learning_rate': 1e-3, 'trg_cls_loss_wt': 1},
             "SASA": {
@@ -431,6 +435,7 @@ class mobiact_pamap():
         }
         self.alg_hparams = {
             'NO_ADAPT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'SYN': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'ROT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'TARGET_ONLY': {'learning_rate': 1e-3, 'trg_cls_loss_wt': 1},
             "SASA": {
@@ -534,6 +539,7 @@ class pamap_mobiact():
         }
         self.alg_hparams = {
             'NO_ADAPT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
+            'SYN': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'ROT': {'learning_rate': 1e-3, 'src_cls_loss_wt': 1},
             'TARGET_ONLY': {'learning_rate': 1e-3, 'trg_cls_loss_wt': 1},
             "SASA": {

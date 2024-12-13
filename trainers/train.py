@@ -122,30 +122,11 @@ class Trainer(AbstractTrainer):
             # Save checkpoint
             self.save_checkpoint(self.home_path, self.scenario_log_dir, self.last_model, self.best_model)
 
-
             # Trainer
             for src_id, trg_id in self.dataset_configs.scenarios:
-            # for run_id in range(self.num_runs):
-                # # fixing random seed
-                # fix_randomness(run_id)
-
-                # # Logging
-                # self.logger, self.scenario_log_dir = starting_logs(self.dataset, self.da_method, self.exp_log_dir,
-                #                                                 src_id, trg_id, run_id)
-                # # Average meters
-                # self.loss_avg_meters = collections.defaultdict(lambda: AverageMeter())
 
                 # Load data
                 self.load_data(src_id, trg_id)
-                
-                # # initiate the domain adaptation algorithm
-                # self.initialize_algorithm()
-
-                # # Train the domain adaptation algorithm
-                # self.last_model, self.best_model = self.algorithm.update(self.src_train_dl, self.trg_train_dl, self.loss_avg_meters, self.logger)
-
-                # # Save checkpoint
-                # self.save_checkpoint(self.home_path, self.scenario_log_dir, self.last_model, self.best_model)
 
                 # Calculate risks and metrics
                 metrics = self.calculate_metrics()

@@ -19,15 +19,17 @@ for da_method in da_methods:
 
     num_runs = 10 if da_method in ['NO_ADAPT', 'SYN'] else 1
     
-    for i, dataset in datasets:
+    for i, dataset in enumerate(datasets):
+
+        exp_name = 'ROT_' + exp_names[i]
 
         subprocess.run(['python', 'main.py',
                         '--phase', 'train',
                         '--save_dir', 'experiments_logs_wal',
-                        '--exp_name', exp_names[i],
+                        '--exp_name', exp_name,
                         '--da_method', da_method,
-                        '--data_path', 'data',
-                        '--dataset', 'pamap_mobiact',
+                        '--data_path', 'data_temp',
+                        '--dataset', dataset,
                         '--backbone', 'CNN',
                         '--num_runs', str(num_runs),
                         '--device', 'cuda'

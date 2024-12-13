@@ -1,0 +1,207 @@
+=============================================
+Dataset: realworld_mobiact
+Method:  Deep_Coral
+=============================================
+Source: df ---> Target: dp_wal_26
+Run ID: 0
+=============================================
+[Epoch : 1/40]
+Total_loss	: 3.3762
+Src_cls_loss	: 0.5058
+coral_loss	: 0.0009
+-------------------------------------
+[Epoch : 2/40]
+Total_loss	: 2.9271
+Src_cls_loss	: 0.4385
+coral_loss	: 0.0009
+-------------------------------------
+[Epoch : 3/40]
+Total_loss	: 2.6583
+Src_cls_loss	: 0.3982
+coral_loss	: 0.0008
+-------------------------------------
+[Epoch : 4/40]
+Total_loss	: 2.4880
+Src_cls_loss	: 0.3727
+coral_loss	: 0.0007
+-------------------------------------
+[Epoch : 5/40]
+Total_loss	: 2.3551
+Src_cls_loss	: 0.3528
+coral_loss	: 0.0007
+-------------------------------------
+[Epoch : 6/40]
+Total_loss	: 2.2509
+Src_cls_loss	: 0.3372
+coral_loss	: 0.0006
+-------------------------------------
+[Epoch : 7/40]
+Total_loss	: 2.1580
+Src_cls_loss	: 0.3233
+coral_loss	: 0.0006
+-------------------------------------
+[Epoch : 8/40]
+Total_loss	: 2.0796
+Src_cls_loss	: 0.3116
+coral_loss	: 0.0006
+-------------------------------------
+[Epoch : 9/40]
+Total_loss	: 2.0067
+Src_cls_loss	: 0.3006
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 10/40]
+Total_loss	: 1.9431
+Src_cls_loss	: 0.2911
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 11/40]
+Total_loss	: 1.8833
+Src_cls_loss	: 0.2822
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 12/40]
+Total_loss	: 1.8334
+Src_cls_loss	: 0.2747
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 13/40]
+Total_loss	: 1.7934
+Src_cls_loss	: 0.2687
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 14/40]
+Total_loss	: 1.7537
+Src_cls_loss	: 0.2627
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 15/40]
+Total_loss	: 1.7153
+Src_cls_loss	: 0.2570
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 16/40]
+Total_loss	: 1.6818
+Src_cls_loss	: 0.2520
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 17/40]
+Total_loss	: 1.6536
+Src_cls_loss	: 0.2477
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 18/40]
+Total_loss	: 1.6265
+Src_cls_loss	: 0.2437
+coral_loss	: 0.0005
+-------------------------------------
+[Epoch : 19/40]
+Total_loss	: 1.5986
+Src_cls_loss	: 0.2395
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 20/40]
+Total_loss	: 1.5755
+Src_cls_loss	: 0.2360
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 21/40]
+Total_loss	: 1.5532
+Src_cls_loss	: 0.2327
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 22/40]
+Total_loss	: 1.5318
+Src_cls_loss	: 0.2295
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 23/40]
+Total_loss	: 1.5109
+Src_cls_loss	: 0.2263
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 24/40]
+Total_loss	: 1.4910
+Src_cls_loss	: 0.2233
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 25/40]
+Total_loss	: 1.4709
+Src_cls_loss	: 0.2203
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 26/40]
+Total_loss	: 1.4513
+Src_cls_loss	: 0.2174
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 27/40]
+Total_loss	: 1.4344
+Src_cls_loss	: 0.2149
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 28/40]
+Total_loss	: 1.4157
+Src_cls_loss	: 0.2121
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 29/40]
+Total_loss	: 1.3989
+Src_cls_loss	: 0.2095
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 30/40]
+Total_loss	: 1.3839
+Src_cls_loss	: 0.2073
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 31/40]
+Total_loss	: 1.3694
+Src_cls_loss	: 0.2051
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 32/40]
+Total_loss	: 1.3556
+Src_cls_loss	: 0.2030
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 33/40]
+Total_loss	: 1.3398
+Src_cls_loss	: 0.2007
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 34/40]
+Total_loss	: 1.3261
+Src_cls_loss	: 0.1986
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 35/40]
+Total_loss	: 1.3126
+Src_cls_loss	: 0.1966
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 36/40]
+Total_loss	: 1.3009
+Src_cls_loss	: 0.1948
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 37/40]
+Total_loss	: 1.2882
+Src_cls_loss	: 0.1930
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 38/40]
+Total_loss	: 1.2768
+Src_cls_loss	: 0.1912
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 39/40]
+Total_loss	: 1.2661
+Src_cls_loss	: 0.1896
+coral_loss	: 0.0004
+-------------------------------------
+[Epoch : 40/40]
+Total_loss	: 1.2556
+Src_cls_loss	: 0.1881
+coral_loss	: 0.0004
+-------------------------------------

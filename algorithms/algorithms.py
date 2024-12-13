@@ -88,7 +88,7 @@ class NO_ADAPT(Algorithm):
         for src_x, src_y in src_loader:
             
             src_x, src_y = src_x.to(self.device), src_y.to(self.device)
-            # src_x = augment_batch(src_x)
+            src_x = augment_batch(src_x)
             src_feat = self.feature_extractor(src_x)
             src_pred = self.classifier(src_feat)
 
@@ -230,7 +230,7 @@ class Deep_Coral(Algorithm):
 
         for step, ((src_x, src_y), (trg_x, _)) in joint_loader:
             src_x, src_y, trg_x = src_x.to(self.device), src_y.to(self.device), trg_x.to(self.device)
-            # src_x = augment_batch(src_x)
+            src_x = augment_batch(src_x)
 
             src_feat = self.feature_extractor(src_x)
             src_pred = self.classifier(src_feat)
@@ -367,7 +367,7 @@ class DANN(Algorithm):
         for step, ((src_x, src_y), (trg_x, _)) in joint_loader:
 
             src_x, src_y, trg_x = src_x.to(self.device), src_y.to(self.device), trg_x.to(self.device)
-            # src_x = augment_batch(src_x)
+            src_x = augment_batch(src_x)
             
             p = float(step + epoch * num_batches) / self.hparams["num_epochs"] + 1 / num_batches
             alpha = 2. / (1. + np.exp(-10 * p)) - 1
